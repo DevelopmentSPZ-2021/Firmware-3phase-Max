@@ -1,0 +1,184 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="ZON_P3S_CT_v114" target="19" version="2">
+  <project Name="ZON_P3S_CT_v114">
+    <configuration
+      Name="Common"
+      Platform="MAXQ30"
+      Target="ZON_P3S"
+      c_user_include_directories="$(ProjectDir);$(ProjectDir)/afe;$(ProjectDir)/autocal;$(ProjectDir)/bat;$(ProjectDir)/cal;$(ProjectDir)/ce;$(ProjectDir)/cli;$(ProjectDir)/crc;$(ProjectDir)/delay;$(ProjectDir)/dev;$(ProjectDir)/eeprom;$(ProjectDir)/err;$(ProjectDir)/ext;$(ProjectDir)/flash;$(ProjectDir)/gpio;$(ProjectDir)/hash;$(ProjectDir)/i2c;$(ProjectDir)/infoBlock;$(ProjectDir)/LCD;$(ProjectDir)/main;$(ProjectDir)/meter;$(ProjectDir)/reg;$(ProjectDir)/rtc;$(ProjectDir)/serial;$(ProjectDir)/sfr;$(ProjectDir)/spi;$(ProjectDir)/tmp;$(ProjectDir)/tmr;$(ProjectDir)/touch"
+      linker_memory_map_file="$(PackagesDir)/targets/silergy/ZON_P3S.xml"
+      linker_output_format="hex"
+      linker_section_placement_file="$(StudioDir)/targets/section_placement.xml"
+      project_directory=""
+      project_type="Executable"
+      simulator_DLL_FileName="$(PackagesDir)/targets/silergy/maxq1850sim$(HostDLL)"
+      simulator_DLL_RomFileName="$(PackagesDir)/targets/silergy/romq30.hex"
+      target_erase_script="OnErase()" />
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;h;s;asm;inc" />
+      <folder Name="meter">
+        <file file_name="meter/meter.c" />
+        <file file_name="meter/mmath.c" />
+        <file file_name="meter/data_ok.c" />
+      </folder>
+      <folder Name="LCD">
+        <file file_name="LCD/lcd.c" />
+        <file file_name="LCD/lcd_strings_en.c" />
+        <file file_name="LCD/lcd_VL6648_3_phase_iso.c" />
+        <file file_name="LCD/LCD_VL6648_demo.c">
+          <configuration Name="MAXQ30 Debug" build_exclude_from_build="No" />
+        </file>
+        <file file_name="LCD/lcd_pin.c" />
+      </folder>
+      <folder Name="eeprom">
+        <file file_name="eeprom/eepromdio.c" />
+      </folder>
+      <folder Name="afe">
+        <file file_name="afe/afe.c">
+          <configuration Name="MAXQ30 Debug" default_code_section="CODE" />
+        </file>
+      </folder>
+      <folder Name="CE">
+        <file file_name="ce/ce.c" />
+        <file file_name="ce/ce96a01r.c" />
+      </folder>
+      <folder Name="cli">
+        <file file_name="cli/cli.c" />
+        <file file_name="cli/help.c" />
+        <file file_name="cli/version.c" />
+        <file file_name="cli/cli_display_3_phase_iso.c" />
+      </folder>
+      <folder Name="autocal">
+        <file file_name="autocal/autocalce96a01r.c" />
+      </folder>
+      <folder Name="rtc">
+        <file file_name="rtc/rtc.c" />
+      </folder>
+      <folder Name="bat">
+        <file file_name="bat/bat.c" />
+        <file file_name="bat/batmode.c" />
+      </folder>
+      <folder Name="flash">
+        <file file_name="flash/flash.asm" />
+      </folder>
+      <folder Name="tmp">
+        <file file_name="tmp/tmp.c" />
+      </folder>
+      <folder Name="spi">
+        <file file_name="spi/spi_slave.c" />
+        <file file_name="spi/spi_master.c" />
+      </folder>
+      <folder Name="i2c">
+        <file file_name="i2c/iicdio.c" />
+      </folder>
+      <folder Name="crc">
+        <file file_name="crc/crc.c" />
+      </folder>
+      <folder Name="tmr">
+        <file file_name="tmr/tmr_common.c" />
+        <file file_name="tmr/tmr0_pwm.c" />
+        <file file_name="tmr/tmr1_pwm.c" />
+        <file file_name="tmr/tmr2_autoreload.c" />
+      </folder>
+      <folder
+        Name="delay"
+        file_name=""
+        filter="*.c;*.asm"
+        path="delay"
+        recurse="No" />
+      <folder Name="err">
+        <file file_name="err/error.c" />
+      </folder>
+      <folder Name="hash">
+        <file file_name="hash/hash_str.c" />
+      </folder>
+      <folder Name="infoBlock">
+        <file file_name="infoBlock/info_block.asm">
+          <configuration Name="MAXQ30 Debug" build_exclude_from_build="No" />
+        </file>
+      </folder>
+      <folder Name="serial">
+        <file file_name="serial/ser.c" />
+        <file file_name="serial/ser0.c" />
+        <file file_name="serial/ser1.c" />
+        <file file_name="serial/ser2.c" />
+        <file file_name="serial/ser_str_en.c" />
+      </folder>
+      <folder Name="sfr">
+        <file file_name="sfr/sfr.asm" />
+      </folder>
+      <folder Name="main">
+        <file file_name="main/main.c" />
+      </folder>
+      <folder Name="cal">
+        <file file_name="cal/cal.c" />
+      </folder>
+      <folder Name="reg">
+        <file file_name="reg/reg.c" />
+      </folder>
+      <folder Name="touch">
+        <file file_name="touch/touch.c" />
+      </folder>
+      <folder Name="ext">
+        <file file_name="ext/ext.c" />
+      </folder>
+      <folder Name="gpio">
+        <file file_name="gpio/gpio.c" />
+      </folder>
+      <file file_name="ce96a01.h" />
+    </folder>
+    <folder Name="System Files">
+      <configuration Name="Common" filter="xml" />
+      <file file_name="dev/startup_zon_p3s.asm" />
+      <file file_name="dev/system_zon_p3s.c" />
+      <file file_name="ZON_M3S.xml" />
+      <file file_name="MAXQ30_Target.js">
+        <configuration Name="Common" file_type="Target Script" />
+      </file>
+    </folder>
+    <configuration
+      Name="MAXQ30 Debug"
+      Target="ZON_P3S"
+      build_debug_information="Yes"
+      build_quietly="Yes"
+      c_preprocessor_definitions="P3S_CT"
+      c_preprocessor_undefinitions=""
+      c_user_include_directories=""
+      linker_checksum_sections=""
+      linker_memory_map_file="$(PackagesDir)/targets/silergy/ZON_P3S.xml"
+      linker_section_placement_file="$(PackagesDir)/targets/silergy/section_placement_zon.xml"
+      optimize_register_allocation="Locals Only"
+      simulator_DLL_FileName="$(PackagesDir)/targets/silergy/maxq1850sim$(HostDLL)"
+      simulator_DLL_RomFileName="$(PackagesDir)/targets/silergy/romq30.hex" />
+    <configuration
+      Name="Uses ce66a02 Debug"
+      c_additional_options="-DCE66A02_BUILD" />
+    <folder
+      Name="Header Files"
+      exclude=""
+      filter="*.h"
+      path="."
+      recurse="Yes" />
+  </project>
+  <configuration
+    Name="MAXQ30 Debug"
+    Target="ZON_P3S"
+    c_preprocessor_definitions=""
+    inherited_configurations="MAXQ30;Debug"
+    link_use_multi_threaded_libraries="No"
+    linker_memory_map_file="$(PackagesDir)/targets/silergy/ZON_P3S.xml"
+    linker_section_placement_file="$(PackagesDir)/targets/silergy/section_placement_zon.xml"
+    simulator_DLL_FileName="$(PackagesDir)/targets/silergy/maxq1850sim$(HostDLL)"
+    simulator_DLL_RomFileName="$(PackagesDir)/targets/silergy/romq30.hex" />
+  <configuration Name="MAXQ30" Platform="MAXQ30" hidden="Yes" />
+  <configuration Name="Debug" build_debug_information="Yes" hidden="Yes" />
+  <configuration
+    Name="MAXQ30 Release"
+    inherited_configurations="MAXQ30;Release" />
+  <configuration
+    Name="Release"
+    build_debug_information="No"
+    c_preprocessor_definitions="NDEBUG"
+    hidden="Yes" />
+  <configuration Name="Uses ce66a02 Debug" />
+</solution>
